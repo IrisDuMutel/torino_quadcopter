@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/iris/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/iris/catkin_ws/src/imu_tools/imu_complementary_filter/include/**",
+        "/home/iris/catkin_ws/src/imu_tools/imu_filter_madgwick/include/**",
+        "/home/iris/catkin_ws/src/rosserial/rosserial_server/include/**",
+        "/home/iris/catkin_ws/src/rosserial/rosserial_test/include/**",
+        "/home/iris/catkin_ws/src/simulink_to_txt/include/**",
+        "/home/iris/catkin_ws/src/torino_quadcopter/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

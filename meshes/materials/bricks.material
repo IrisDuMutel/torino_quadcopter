@@ -1,0 +1,14 @@
+material bricks/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture bricks.png
+      }
+    }
+  }
+}

@@ -15,40 +15,162 @@
 
     <!-- A ground plane -->
     <include>
-      <uri>model://my_ground_plane</uri>
+    <uri>model://my_ground_plane</uri>
     </include>
+
+    <!-- <model name ='ground_p'>
+      <static>true</static>
+      <pose> 0 0 0 0 0 0 </pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>1000 1000</size>
+          </plane>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>1000 1000</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>/home/iris/catkin_ws/src/torino_quadcopter/meshes/materials</uri>
+            <name>bricks/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model> -->
 
 
 
 
 <model name = 'horse_mod'>
-    <static>true</static>
-    <pose> 0 0 0 0 0 0 </pose>
-    <collision name='intesa_Collision'>
+  <static>true</static>
+  <pose> -0.4 0 2.5 0 0 1.57</pose>
+  <link name = 'horse'>
+    <collision name='horse_Collision'>
         <geometry>
           <box>
             <size>1 1 1</size>
           </box>
         </geometry>
         <pose>0 0 0 0 0 0</pose>
-        <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-              </ode>
-            </friction>
-          </surface>
-      </collision>
-    <visual name="visual">
+    </collision>
+    <visual name="horse_visual">
+      <cast_shadows>true</cast_shadows>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-          <mesh filename="package:/torino_quadcopter/meshes/16274_Morgan_Horse_Galloping_new.obj" scale="1 1 1"/>
+        <!-- <box>
+            <size>1 1 1</size>
+        </box> -->
+          <!-- <mesh>
+          <uri>/home/iris/catkin_ws/src/torino_quadcopter/meshes/horse2.dae</uri>
+          <scale> 0.001 0.001 0.001</scale>
+          </mesh> -->
+          <mesh>
+          <uri>/home/iris/catkin_ws/src/torino_quadcopter/meshes/horse.dae</uri>
+          <scale> 0.1 0.1 0.1</scale>
+          </mesh>
         </geometry>
-        
-      </visual>
+    </visual>
+  </link>
 </model>
 
+<model name = 'horse_block_mod' >
+<static>true</static>
+    <pose> 0 0 1.25 0 0 0</pose>
+    <link name='horse_block'>
+    <pose> 0 0 0 0 0 0 </pose>
+    <collision name='horse_block_Collision'>
+        <geometry>
+          <box>
+            <size>2 1 2.5</size>
+          </box>
+        </geometry>
+        <pose>0 0 0 0 0 0</pose>
+    </collision>
+    <visual name='horse_block_Visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2 1 2.5</size>
+          </box>
+        </geometry>
+        <material>
+            <script>
+            <uri>/home/iris/catkin_ws/src/torino_quadcopter/meshes/materials</uri>
+            <name>marble/Diffuse</name>
+            </script>
+        </material>
+      </visual>
+  </link>
+</model>
+
+<model name = 'horse_scalini_mod' >
+<static>true</static>
+    <pose> 0 0 0.1 0 0 0</pose>
+    <link name='horse_scalini'>
+    <pose> 0 0 0 0 0 0 </pose>
+    <collision name='horse_scalini_Collision'>
+        <geometry>
+          <box>
+            <size>6 3 0.2</size>
+          </box>
+        </geometry>
+        <pose>0 0 0 0 0 0</pose>
+      </collision>
+    <visual name='horse_scalini_Visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>7 3 0.2</size>
+          </box>
+        </geometry>
+        <material>
+            <script>
+            <uri>/home/iris/catkin_ws/src/torino_quadcopter/meshes/materials</uri>
+            <name>marble/Diffuse</name>
+            </script>
+        </material>
+      </visual>
+  </link>
+</model>
+
+<model name = 'horse_scalini_mod2' >
+<static>true</static>
+    <pose> 0 0 0.2 0 0 0</pose>
+    <link name='horse_scalini'>
+    <pose> 0 0 0 0 0 0 </pose>
+    <collision name='horse_scalini_Collision2'>
+        <geometry>
+          <box>
+            <size>4 2 0.4</size>
+          </box>
+        </geometry>
+        <pose>0 0 0 0 0 0</pose>
+      </collision>
+    <visual name='horse_scalini_Visual2'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>4 2 0.4</size>
+          </box>
+        </geometry>
+        <material>
+            <script>
+            <uri>/home/iris/catkin_ws/src/torino_quadcopter/meshes/materials</uri>
+            <name>marble/Diffuse</name>
+            </script>
+        </material>
+      </visual>
+  </link>
+</model>
 
 
 <model name='intesa_mod'>
@@ -269,6 +391,204 @@
     </link>
 </model>
     
+<!--   <model name="box">
+  <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>6 1 1</size>
+          </box>
+        </geometry>
+        <material>
+            <script>
+            <uri>/home/iris/catkin_ws/src/torino_quadcopter/meshes/materials</uri>
+            <name>bricks/Diffuse</name>
+            </script>
+        </material>
+      </visual>
+    </link>
+  </model> -->
+
+
+<model name='ed1_mod'>
+<static>true</static>
+    <pose> 133 60 3 0 0 0</pose>
+    <link name='ed1'>
+    <pose> 0 0 0 0 0 0 </pose>
+    <collision name='ed1_Collision'>
+        <geometry>
+          <box>
+            <size>94 102 6</size>
+          </box>
+        </geometry>
+        <pose>0 0 0 0 0 0</pose>
+      </collision>
+    <visual name='ed1_Visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>94 102 6</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+</model>
+
+<model name='ed2_mod'>
+<static>true</static>
+    <pose> 133 -52 3 0 0 0</pose>
+    <link name='ed2'>
+    <pose> 0 0 0 0 0 0 </pose>
+    <collision name='ed2_Collision'>
+        <geometry>
+          <box>
+            <size>94 87 6</size>
+          </box>
+        </geometry>
+        <pose>0 0 0 0 0 0</pose>
+      </collision>
+    <visual name='ed2_Visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>94 87 6</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+</model>
+
+
+<model name='ed3_mod'>
+<static>true</static>
+    <pose> 225 28.5 3 0 0 0</pose>
+    <link name='ed3'>
+    <pose> 0 0 0 0 0 0 </pose>
+    <collision name='ed3_Collision'>
+        <geometry>
+          <box>
+            <size>80 40 6</size>
+          </box>
+        </geometry>
+        <pose>0 0 0 0 0 0</pose>
+      </collision>
+    <visual name='ed3_Visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>80 40 6</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+</model>
+
+<model name='ed4_mod'>
+<static>true</static>
+    <pose> 225 -28.5 3 0 0 0</pose>
+    <link name='ed2'>
+    <pose> 0 0 0 0 0 0 </pose>
+    <collision name='ed4_Collision'>
+        <geometry>
+          <box>
+            <size>80 40 6</size>
+          </box>
+        </geometry>
+        <pose>0 0 0 0 0 0</pose>
+      </collision>
+    <visual name='ed4_Visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>80 40 6</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+</model>
+
+<model name='ed5_mod'>
+<static>true</static>
+    <pose> 307 32.5 3 0 0 0</pose>
+    <link name='ed5'>
+    <pose> 0 0 0 0 0 0 </pose>
+    <collision name='ed5_Collision'>
+        <geometry>
+          <box>
+            <size>65 48 6</size>
+          </box>
+        </geometry>
+        <pose>0 0 0 0 0 0</pose>
+      </collision>
+    <visual name='ed5_Visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>65 48 6</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+</model>
+
+<model name='ed6_mod'>
+<static>true</static>
+    <pose> 307 -57 3 0 0 0</pose>
+    <link name='ed6'>
+    <pose> 0 0 0 0 0 0 </pose>
+    <collision name='ed6_Collision'>
+        <geometry>
+          <box>
+            <size>65 97 6</size>
+          </box>
+        </geometry>
+        <pose>0 0 0 0 0 0</pose>
+      </collision>
+    <visual name='ed6_Visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>65 97 6</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+</model>
+
+
+
+<model name='madama_mod'>
+<static>true</static>
+    <pose> 422 -60 3 0 0 3.1415</pose>
+    <link name='madama'>
+    <pose> 0 0 0 0 0 0 </pose>
+    <collision name='madama_Collision'>
+        <geometry>
+          <box>
+            <size>80 40 6</size>
+          </box>
+        </geometry>
+        <pose>0 0 0 0 0 0</pose>
+      </collision>
+    <visual name='madama_Visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cast_shadows>true</cast_shadows>
+        <pose>0 0 0 0 0 0</pose>
+          <mesh>
+          <uri>/home/iris/catkin_ws/src/torino_quadcopter/meshes/madama.dae</uri>
+          <scale> 1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+</model>
+
+
+
+
+
     <physics type="ode">
       <real_time_update_rate>1000.0</real_time_update_rate>
       <max_step_size>0.001</max_step_size>
@@ -291,3 +611,5 @@
     </physics>
   </world>
 </sdf>
+
+

@@ -1,0 +1,14 @@
+material marble/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture marble.png
+      }
+    }
+  }
+}
